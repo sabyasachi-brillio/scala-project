@@ -38,10 +38,11 @@ private def uploadInOrder(csvDataList: CsvDataList, i: Int): Int =
         uploadProcessor(csvDataList.rtqPeG) &
         uploadProcessor(csvDataList.rtqPeB)))
         if (i >= 3 || (uploadProcessor(csvDataList.accPe) & 
-	  uploadProcessor(csvDataList.hdPe)))
+	      uploadProcessor(csvDataList.hdPe)))
           if (i >= 4 || (uploadProcessor(csvDataList.quPeG) & 
-	    uploadProcessor(csvDataList.quPeMQ)))
-            if (i == 5 || uploadProcessor(csvDataList.quDePe))
+	        uploadProcessor(csvDataList.quPeMQ)))
+            if (i == 5 || (uploadProcessor(csvDataList.quDePeG) &
+              uploadProcessor(csvDataList.quDePeMQ)))
               5
             else 4
           else 3

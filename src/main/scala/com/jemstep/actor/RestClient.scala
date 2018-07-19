@@ -5,7 +5,7 @@ import java.util
 
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper, SerializationFeature}
 import com.jemstep.logging.BulkStreamLogging
-import com.jemstep.model.CreateJobRequest
+import com.jemstep.bulkapi.v2.CreateJobRequest
 import com.jemstep.model.CustomModel.ConnectionDetails
 import com.sforce.async.JobStateEnum
 import org.apache.http.HttpResponse

@@ -27,12 +27,13 @@ object CustomModel {
   case class CsvDataList(rtqPeU: CsvData, rtqPeP: CsvData,
                          rtqPeG: CsvData, rtqPeB: CsvData,
                          accPe: CsvData, hdPe: CsvData,
-                         quPeG: CsvData, quPeMQ: CsvData, quDePe: CsvData) {
+                         quPeG: CsvData, quPeMQ: CsvData, quDePeG: CsvData, quDePeMQ: CsvData) {
     override def toString: String =
       rtqPeU.toString + rtqPeP.toString +
         rtqPeG.toString + rtqPeB.toString +
         accPe.toString + hdPe.toString +
-        quPeG.toString + quPeMQ.toString + quDePe.toString
+        quPeG.toString + quPeMQ.toString +
+        quDePeG.toString + quDePeG.toString
   }
 
   case class CacheStore(lastBulkApiCall: Long, lastCacheUpdate: Long,
@@ -45,10 +46,11 @@ object CustomModel {
   case class CacheHolder(rtqPeU: List[EntityInfo], rtqPeP: List[EntityInfo],
                          rtqPeG: List[EntityInfo], rtqPeB: List[EntityInfo],
                          accPe: List[EntityInfo], hdPe: List[EntityInfo],
-                         quPeG: List[EntityInfo], quPeMQ: List[EntityInfo], quDePe: List[EntityInfo]) {
+                         quPeG: List[EntityInfo], quPeMQ: List[EntityInfo],
+                         quDePeG: List[EntityInfo], quDePeMQ: List[EntityInfo]) {
     def readyForUpload: Boolean =
       rtqPeU.nonEmpty & //rtqPeP.nonEmpty & rtqPeB.nonEmpty & rtqPeG.nonEmpty &
-        accPe.nonEmpty & hdPe.nonEmpty & quPeG.nonEmpty & quPeMQ.nonEmpty & quDePe.nonEmpty
+        accPe.nonEmpty & hdPe.nonEmpty & quPeG.nonEmpty & quPeMQ.nonEmpty & quDePeG.nonEmpty & quDePeMQ.nonEmpty
 
     def anyEntityReachedMaxSize(cs: Int): Boolean =
       if (readyForUpload)
@@ -60,7 +62,8 @@ object CustomModel {
           isLimitReached(hdPe, cs) |
           isLimitReached(quPeG, cs) |
           isLimitReached(quPeMQ, cs) |
-          isLimitReached(quDePe, cs)
+          isLimitReached(quDePeG, cs) |
+          isLimitReached(quDePeMQ, cs)
       else false
 
     def getCsvData(org: String): CsvDataList = {
@@ -73,7 +76,8 @@ object CustomModel {
         CsvData(HOLDING_PE.toString, org, getCsvRows(HOLDING_PE, hdPe), getOffset(hdPe)),
         CsvData(QUESTIONNAIRE_PE_G.toString, org, getCsvRows(QUESTIONNAIRE_PE_G, quPeG), getOffset(quPeG)),
         CsvData(QUESTIONNAIRE_PE_MQ.toString, org, getCsvRows(QUESTIONNAIRE_PE_MQ, quPeMQ), getOffset(quPeMQ)),
-        CsvData(QUESTIONNAIRE_DETAIL_PE.toString, org, getCsvRows(QUESTIONNAIRE_DETAIL_PE, quDePe), getOffset(quDePe)))
+        CsvData(QUESTIONNAIRE_DETAIL_PEG.toString, org, getCsvRows(QUESTIONNAIRE_DETAIL_PEG, quDePeG), getOffset(quDePeG)),
+        CsvData(QUESTIONNAIRE_DETAIL_PEMQ.toString, org, getCsvRows(QUESTIONNAIRE_DETAIL_PEMQ, quDePeMQ), getOffset(quDePeMQ)))
     }
 
     /**
@@ -106,7 +110,8 @@ object CustomModel {
       case HOLDING_PE => "Jemstep1__Account_Id__c,Jemstep1__Asset_Class__c,Jemstep1__Cost_Basis__c,Jemstep1__Date_Updated__c,Jemstep1__Description__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Jemstep_Id__c,Jemstep1__Price__c,Jemstep1__Quantity__c,Jemstep1__Symbol__c,Jemstep1__Value__c\n"
       case QUESTIONNAIRE_PE_G => "Jemstep1__Jemstep_Id__c,Jemstep1__Jemstep_Questionaire_Name__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Parent_Jemstep_Id__c\n"
       case QUESTIONNAIRE_PE_MQ => "Jemstep1__Jemstep_Id__c,Jemstep1__Jemstep_Questionaire_Name__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Parent_Jemstep_Id__c\n"
-      case QUESTIONNAIRE_DETAIL_PE => "Jemstep1__Answer__c,Jemstep1__Full_Question__c,Jemstep1__Jemstep_Id__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Question__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Last_Reviewed_Modified__c\n"
+      case QUESTIONNAIRE_DETAIL_PEG => "Jemstep1__Answer__c,Jemstep1__Full_Question__c,Jemstep1__Jemstep_Id__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Question__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Last_Reviewed_Modified__c\n"
+      case QUESTIONNAIRE_DETAIL_PEMQ => "Jemstep1__Answer__c,Jemstep1__Full_Question__c,Jemstep1__Jemstep_Id__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Question__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Last_Reviewed_Modified__c\n"
     }
   }
 

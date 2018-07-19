@@ -3,73 +3,24 @@ package com.jemstep.bulkapi.v2
 
 import java.io.{FileInputStream, FileNotFoundException, IOException}
 
-//import java.io.UnsupportedEncodingException
-
 import java.nio.file.{Files, Paths}
 import java.util.{ArrayList, List, Properties}
 
 import org.apache.http.{HttpResponse, NameValuePair}
 
-//import org.apache.http.ParseException
-
-//import org.apache.http.client.ClientProtocolException
-
 import org.apache.http.client.entity.UrlEncodedFormEntity
 import org.apache.http.client.methods.{HttpGet, HttpPatch, HttpPost, HttpPut}
 import org.apache.http.entity.StringEntity
-
-//import org.apache.http.entity.mime.MultipartEntityBuilder
-
-//import org.apache.http.impl.client.CloseableHttpClient
 
 import org.apache.http.impl.client.HttpClients
 import org.apache.http.message.BasicNameValuePair
 import org.apache.http.util.EntityUtils
 
-//import com.fasterxml.jackson.core.JsonParseException
-
-//import com.fasterxml.jackson.databind.JsonMappingException
-
 import com.fasterxml.jackson.databind.{JsonNode, ObjectMapper, SerializationFeature}
 import com.sforce.async.JobStateEnum
 
-//import RestBulkClient._
-
-//remove if not needed
-//import scala.collection.JavaConversions._
-//import resource._ //use scala-arm from http://jsuereth.com/scala-arm/
 
 object RestBulkClient {
-
-  /*private var TOKEN_URL: String =""
-
-  private var CLIENT_ID: String = ""
-
-  private var CLIENT_SECRET: String = ""
-
-  private var REFRESH_TOKEN: String = ""
-
-  private var accessToken: String = ""
-
-  private var instanceUrl: String = ""
-
-  private val GRANT_TYPE: String = "refresh_token"
-
-  private val BEARER: String = "Bearer"
-
-  private val CONTENT_TYPE: String = "application/json"
-
-  private val ACCEPT: String = "application/json"
-
-  private val REST_URI: String = "/services/data/v42.0/jobs/ingest/"
-*/
-  //private val CREATE_JOB_URI: String = "/ingest/"
-
-
-  /*}
-
-  class RestBulkClient {*/
-
 
   private val GRANT_TYPE: String = "refresh_token"
 
@@ -122,14 +73,11 @@ object RestBulkClient {
       val loginResult: JsonNode = mapper.readValue(
         loginResponse.getEntity.getContent,
         classOf[JsonNode])
-      /*
-        accessToken = loginResult.get("access_token").asText()
-      instanceUrl = loginResult.get("instance_url").asText()*/
+
       val val1 = auth.add(loginResult.get("access_token").asText())
       val val2 = auth.add(loginResult.get("instance_url").asText())
       println(" aadasd " + val1.toString() + "" + val2.toString())
-      /* println("accessToken - " + accessToken)
-       println("instanceUrl - " + instanceUrl)*/
+
       println(bool1.toString() + "" + bool2.toString() + "" + bool3.toString() + "" + bool4.toString())
 
     } catch {
@@ -140,9 +88,6 @@ object RestBulkClient {
   }
 
   def createJob(obj: String): String = {
-    /*var responseJson: JsonNode = null
-    var response: HttpResponse = null*/
-    //println(obj)
     val httpclient = HttpClients.createDefault()
     val uri: String = auth.get(1) + REST_URI
     println("createjob URI -> " + uri)
@@ -172,8 +117,7 @@ object RestBulkClient {
   }
 
   def createJobForJsonUpload(`object`: String): String = {
-    /*var responseJson: JsonNode = null
-    var response: HttpResponse = null*/
+
 
     val httpclient = HttpClients.createDefault()
     val uri: String = auth.get(1) + REST_URI
@@ -274,17 +218,11 @@ object RestBulkClient {
 
 
   def getSucessfulResults(jobId: String): Unit = {
-    // Set JSON body
-    /* val mapper: ObjectMapper =
-       new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)*/
     val url: String = auth.get(1) + REST_URI + jobId + "/successfulResults/"
     val authorization: String = BEARER + " " + auth.get(0)
     val get: HttpGet = new HttpGet(url)
     get.setHeader("Authorization", authorization)
     get.setHeader("Content-Type", CONTENT_TYPE)
-    //var response: HttpResponse = null
-    //var responseEntity: String = null
-
     val httpclient = HttpClients.createDefault()
     val response = httpclient.execute(get)
     if (response != null && response.getEntity != null) {
@@ -312,17 +250,11 @@ object RestBulkClient {
 
 
   def getFailedResults(jobId: String): Unit = {
-    // Set JSON body
-    /*val mapper: ObjectMapper =
-      new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)*/
     val url: String = auth.get(1) + REST_URI + jobId + "/failedResults/"
     val authorization: String = BEARER + " " + auth.get(0)
     val get: HttpGet = new HttpGet(url)
     get.setHeader("Authorization", authorization)
     get.setHeader("Content-Type", CONTENT_TYPE)
-    //var response: HttpResponse = null
-    //var responseEntity: String = null
-
     val httpclient = HttpClients.createDefault()
     val response = httpclient.execute(get)
     val responseEntity = EntityUtils.toString(response.getEntity)
@@ -347,11 +279,7 @@ object RestBulkClient {
     }
   }
 
-  def getUnprocessedResults(jobId: String): Unit = {
-    // Set JSON body
-    /* val mapper: ObjectMapper =
-       new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)*/
-    val url: String = auth.get(1) + REST_URI + jobId + "/unprocessedrecords/"
+  def getUnprocessedResults(jobId: String): Unit = {    val url: String = auth.get(1) + REST_URI + jobId + "/unprocessedrecords/"
     val authorization: String = BEARER + " " + auth.get(0)
     // Set Headers
     val apiParams: List[NameValuePair] = new ArrayList[NameValuePair]()
@@ -362,8 +290,6 @@ object RestBulkClient {
     val get: HttpGet = new HttpGet(url)
     get.setHeader("Authorization", authorization)
     get.setHeader("Content-Type", CONTENT_TYPE)
-    //var response: HttpResponse = null
-    // var responseEntity: String = null
 
     val httpclient = HttpClients.createDefault()
     val response = httpclient.execute(get)
@@ -419,38 +345,5 @@ object RestBulkClient {
     println("close job responseJson -> " + responseJson.asText())
   }
 
-  /* def getAllJobs(): Unit = {
- // Set JSON body
-     val mapper: ObjectMapper =
-       new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT)
-     val url: String = auth.get(1) + "/services/data/v42.0/jobs/ingest"
-     val authorization: String = BEARER + " " + auth.get(0)
-     val get: HttpGet = new HttpGet(url)
-     get.setHeader("Authorization", authorization)
-     get.setHeader("Content-Type", CONTENT_TYPE)
-     val httpclient: CloseableHttpClient = HttpClients.createDefault()
-     var response: HttpResponse = null
-     try response = httpclient.execute(get)
-     catch {
-       case e: ClientProtocolException => e.printStackTrace()
-
-       case e: IOException => e.printStackTrace()
-
-     }
-     var responseJson: JsonNode = null
-     try responseJson =
-       mapper.readValue(response.getEntity.getContent, classOf[JsonNode])
-     catch {
-       case e: JsonParseException => e.printStackTrace()
-
-       case e: JsonMappingException => e.printStackTrace()
-
-       case e: UnsupportedOperationException => e.printStackTrace()
-
-       case e: IOException => e.printStackTrace()
-
-     }
-     println("responseJson -> " + responseJson)
-   }*/
 
 }

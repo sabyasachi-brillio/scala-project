@@ -22,18 +22,18 @@ object GoalModel {
 
       val listOfQuestionnaires: List[EntityObject] =
          List(QuestionnairePeG(Jemstep_Id__c = id,
-            Questionnaire_Id__c = goalObjective.toLowerCase.capitalize+" Fund", Questionnaire_Type__c = goalType, Parent_Jemstep_Id__c = userId))
+            Questionnaire_Id__c = getQuestionnaireName(goalObjective.toUpperCase), Questionnaire_Type__c = "GOAL", Parent_Jemstep_Id__c = userId))
 
       val listOfEntityModel1: EntityModel = EntityModel(QUESTIONNAIRE_PE_G, org, listOfQuestionnaires)
 
       val listOfQuestionnaireDetails: List[EntityObject] =
         questionnaire.questions.map(x =>
-          QuestionnaireDetailPe(Answer__c = x.answer, Full_Question__c = "",
-            Jemstep_Id__c = x.questionId+"_"+System.currentTimeMillis.toString, Jemstep_Questionaire_Detail_Id__c = id,
-            Question__c = "", Questionnaire_Type__c = "",
+          QuestionnaireDetailPeG(Answer__c = x.answer, Full_Question__c = "",
+            Jemstep_Id__c = userId+"_"+x.questionId, Jemstep_Questionaire_Detail_Id__c = id,
+            Question__c = "", Questionnaire_Type__c = "GOAL",
             Last_Reviewed_Modified__c = ""))
 
-      val listOfEntityModel2: EntityModel = EntityModel(QUESTIONNAIRE_DETAIL_PE, org, listOfQuestionnaireDetails)
+      val listOfEntityModel2: EntityModel = EntityModel(QUESTIONNAIRE_DETAIL_PEG, org, listOfQuestionnaireDetails)
 
 
       val rtqPe: RtqPe =
@@ -43,6 +43,18 @@ object GoalModel {
       val listOfEntityModel3: EntityModel = EntityModel(RTQ_PE_G, org, rtqPe :: Nil)
 
       List(listOfEntityModel1, listOfEntityModel2, listOfEntityModel3)
+    }
+  }
+
+  def getQuestionnaireName(goalObj : String) : String = {
+    goalObj match{
+      case "EMERGENCY" => "Emergency Fund"
+      case "EDUCATION" => "Education Fund"
+      case "RETIREMENT" => "Retirement Fund"
+      case "MAJOR_PURCHASE" => "Major Purchase"
+      case "GROW_YOUR_WEALTH" => "Grow your Wealth"
+      case "PROPOSAL" => "Proposal"
+      case "ADVISOR_CREATED" => "Advisor Created"
     }
   }
 

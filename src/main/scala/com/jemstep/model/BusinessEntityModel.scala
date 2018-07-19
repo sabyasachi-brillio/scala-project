@@ -13,6 +13,8 @@ object BusinessEntityModel {
     val ACCOUNT_PE: ENTITY_TYPE = Value("jemstep1__Account_PE__E")
     val HOLDING_PE: ENTITY_TYPE = Value("jemstep1__Holding_PE__e")
     val QUESTIONNAIRE_DETAIL_PE: ENTITY_TYPE = Value("jemstep1__Questionnaire_Detail_PE__e")
+    val QUESTIONNAIRE_DETAIL_PEG: ENTITY_TYPE = Value("jemstep1__Questionnaire_Detail_PE__e")
+    val QUESTIONNAIRE_DETAIL_PEMQ: ENTITY_TYPE = Value("jemstep1__Questionnaire_Detail_PE__e")
     val QUESTIONNAIRE_PE: ENTITY_TYPE = Value("jemstep1__Questionnaire_PE__e")
     val QUESTIONNAIRE_PE_G: ENTITY_TYPE = Value("jemstep1__Questionnaire_PE__e")
     val QUESTIONNAIRE_PE_MQ: ENTITY_TYPE = Value("jemstep1__Questionnaire_PE__e")
@@ -60,10 +62,23 @@ object BusinessEntityModel {
         Quantity__c + "," + Symbol__c + "," + Value__c
   }
 
-  case class QuestionnaireDetailPe(Answer__c: String, Full_Question__c: String,
+  abstract class QuestionnaireDetailPe() extends EntityObject
+
+  case class QuestionnaireDetailPeG(Answer__c: String, Full_Question__c: String,
                                    Jemstep_Id__c: String, Jemstep_Questionaire_Detail_Id__c: String,
                                    Question__c: String, Questionnaire_Type__c: String,
-                                   Last_Reviewed_Modified__c: String) extends EntityObject {
+                                   Last_Reviewed_Modified__c: String) extends  QuestionnaireDetailPe{
+    override def toString: String =
+      Answer__c + "," + Full_Question__c + "," +
+        Jemstep_Id__c + "," + Jemstep_Questionaire_Detail_Id__c + "," +
+        Question__c + "," + Questionnaire_Type__c + "," +
+        Last_Reviewed_Modified__c
+  }
+
+  case class QuestionnaireDetailPeMQ(Answer__c: String, Full_Question__c: String,
+                                    Jemstep_Id__c: String, Jemstep_Questionaire_Detail_Id__c: String,
+                                    Question__c: String, Questionnaire_Type__c: String,
+                                    Last_Reviewed_Modified__c: String) extends QuestionnaireDetailPe {
     override def toString: String =
       Answer__c + "," + Full_Question__c + "," +
         Jemstep_Id__c + "," + Jemstep_Questionaire_Detail_Id__c + "," +
@@ -81,10 +96,10 @@ object BusinessEntityModel {
   }
 
 
-  case class QuestionnairePeMQ(Jemstep_Id__c: String, Questionnaire_Id__c: String) extends QuestionnairePe {
+  case class QuestionnairePeMQ(Jemstep_Id__c: String, Questionnaire_Id__c: String, Questionnaire_Type__c: String, Parent_Jemstep_Id__c: String) extends QuestionnairePe {
     override def toString: String =
       Jemstep_Id__c + "," +
-        Questionnaire_Id__c
+        Questionnaire_Id__c + "," + Questionnaire_Type__c + "," + Parent_Jemstep_Id__c
   }
 
   abstract class RtqPe() extends EntityObject
@@ -141,7 +156,8 @@ object BusinessEntityModel {
         val header: String = obj match {
           case _: AccountPe => "Jemstep1__Account_Name__c,Jemstep1__Account_Number__c,Jemstep1__Account_Status__c,Jemstep1__Account_Type__c,Jemstep1__Account_Value__c,Jemstep1__Contact__c,Jemstep1__Date_Updated__c,Jemstep1__Institution__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Jemstep_Id__c\n"
           case _: HoldingPe => "Jemstep1__Account_Id__c,Jemstep1__Asset_Class__c,Jemstep1__Cost_Basis__c,Jemstep1__Date_Updated__c,Jemstep1__Description__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Jemstep_Id__c,Jemstep1__Price__c,Jemstep1__Quantity__c,Jemstep1__Symbol__c,Jemstep1__Value__c\n"
-          case _: QuestionnaireDetailPe => "Jemstep1__Answer__c,Jemstep1__Full_Question__c,Jemstep1__Jemstep_Id__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Question__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Last_Reviewed_Modified__c\n"
+          case _: QuestionnaireDetailPeG => "Jemstep1__Answer__c,Jemstep1__Full_Question__c,Jemstep1__Jemstep_Id__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Question__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Last_Reviewed_Modified__c\n"
+          case _: QuestionnaireDetailPeMQ => "Jemstep1__Answer__c,Jemstep1__Full_Question__c,Jemstep1__Jemstep_Id__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Question__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Last_Reviewed_Modified__c\n"
           case _: QuestionnairePeG => "Jemstep1__Jemstep_Id__c,Jemstep1__Jemstep_Questionaire_Name__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Parent_Jemstep_Id__c\n"
           case _: QuestionnairePeMQ => "Jemstep1__Jemstep_Id__c,Jemstep1__Jemstep_Questionaire_Name__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Parent_Jemstep_Id__c\n"
           case _: RtqPeB => "Jemstep1__Jemstep_Id__c,Jemstep1__Annual_Savings__c,Jemstep1__Current_Annualized_Return__c,Jemstep1__Current_Best_Year__c,Jemstep1__Current_Best_Year_Return__c,Jemstep1__Current_Cost_Of_Fees__c,Jemstep1__Current_Expense_Ratio__c,Jemstep1__Current_Worst_Year__c,Jemstep1__Current_Worst_Year_Return__c,Jemstep1__Current_Year_With_Loss__c,Jemstep1__Fee_Savings__c,Jemstep1__Target_Annualized_Return__c,Jemstep1__Target_Best_Year__c,Jemstep1__Target_Best_Year_Return__c,Jemstep1__Target_Cost_of_Fees__c,Jemstep1__Target_Expense_Ratio__c,Jemstep1__Target_Worst_Year__c,Jemstep1__Target_Worst_Year_Return__c,Jemstep1__Target_Years_With_Loss__c\n"

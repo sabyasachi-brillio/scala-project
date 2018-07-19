@@ -29,7 +29,8 @@ class NewCacheActor(bulkApiActor: ActorRef) extends Actor {
           .map(existingData =>
             insertIntoCacheHolder(existingData, eh.holder.entityType,
               EntityInfo(eh.holder.entityType, eh.offSet, eh.holder.toString)))
-          .getOrElse(getEmptyCacheHolder)
+          .getOrElse(insertIntoCacheHolder(getEmptyCacheHolder, eh.holder.entityType,
+            EntityInfo(eh.holder.entityType, eh.offSet, eh.holder.toString)))
       
       logInformation(s"Cache ready for upload Status: ${newCacheHolder.readyForUpload} and " +
         s"rtqPeU ${newCacheHolder.rtqPeU.nonEmpty} " +
@@ -37,7 +38,8 @@ class NewCacheActor(bulkApiActor: ActorRef) extends Actor {
         s"holdPE ${newCacheHolder.hdPe.nonEmpty} " +
         s"quPeG ${newCacheHolder.quPeG.nonEmpty} " +
         s"quPeMQ ${newCacheHolder.quPeMQ.nonEmpty} " +
-        s"quDePe ${newCacheHolder.quDePe.nonEmpty} and" +
+        s"quDePeG ${newCacheHolder.quDePeG.nonEmpty} " +
+          s"quDePeMQ ${newCacheHolder.quDePeMQ.nonEmpty} and" +
         s"Cache Reached the limit: ${newCacheHolder.anyEntityReachedMaxSize(MAX_MESSAGE_SIZE)}")
       
       val newCache: Map[String, CacheHolder] =
@@ -80,7 +82,8 @@ class NewCacheActor(bulkApiActor: ActorRef) extends Actor {
       case HOLDING_PE => ch.copy(hdPe = ch.hdPe :+ ei)
       case QUESTIONNAIRE_PE_G => ch.copy(quPeG = ch.quPeG :+ ei)
       case QUESTIONNAIRE_PE_MQ => ch.copy(quPeMQ = ch.quPeMQ :+ ei)
-      case QUESTIONNAIRE_DETAIL_PE => ch.copy(quDePe = ch.quDePe :+ ei)
+      case QUESTIONNAIRE_DETAIL_PEG => ch.copy(quDePeG = ch.quDePeG :+ ei)
+      case QUESTIONNAIRE_DETAIL_PEMQ => ch.copy(quDePeMQ = ch.quDePeMQ :+ ei)
     }
 
 
@@ -88,7 +91,8 @@ class NewCacheActor(bulkApiActor: ActorRef) extends Actor {
     CacheHolder(rtqPeU = List.empty[EntityInfo], rtqPeP = List.empty[EntityInfo],
       rtqPeG = List.empty[EntityInfo], rtqPeB = List.empty[EntityInfo],
       accPe = List.empty[EntityInfo], hdPe = List.empty[EntityInfo],
-      quPeG = List.empty[EntityInfo], quPeMQ = List.empty[EntityInfo], quDePe = List.empty[EntityInfo])
+      quPeG = List.empty[EntityInfo], quPeMQ = List.empty[EntityInfo],
+      quDePeG = List.empty[EntityInfo], quDePeMQ = List.empty[EntityInfo])
 
   private def checkCacheNonEmpty(cache: Map[String, CacheHolder]): Boolean =
   cache.values.exists(ch => ch != getEmptyCacheHolder)
