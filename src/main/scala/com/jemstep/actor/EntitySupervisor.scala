@@ -4,8 +4,7 @@ import java.util.concurrent.TimeUnit
 
 import akka.Done
 import akka.actor._
-import com.jemstep.model.BusinessEntityModel.EntityType
-import com.jemstep.model.CustomModel.{CacheClean, EntityHolder, CacheRefresh}
+import com.jemstep.model.CustomModel.{EntityHolder, CacheRefresh}
 import com.jemstep.model.ExtractorModel.IncomingData
 import com.jemstep.model._
 //import com.jemstep.logging.uploadfailed.UnableToUpload._
@@ -14,7 +13,6 @@ import scala.concurrent.duration.FiniteDuration
 
 class EntitySupervisor extends Actor {
 
-  import EntityType._
   import context.dispatcher
 
   val bulkApiActor: ActorRef = context.actorOf(Props[BulkApiActor], "bulkApiActor")
