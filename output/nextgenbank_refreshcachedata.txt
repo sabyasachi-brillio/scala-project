@@ -1,0 +1,175 @@
+Unable to upload the data for entity: `jemstep1__Investor_PE__e` org: `nextgenbank` and offsets: List(13985, 13990, 13995)
+Jemstep1__Jemstep_Id__c,Jemstep1__Address__c,Jemstep1__Email__c,Jemstep1__Last_Name__c,Jemstep1__First_Name__c
+
+
+7d10ea70-3d58-4d28-8ad2-e3890200a03a,192.168.1.1,randy.gilbert@example.com,gilbert,randy
+
+67ad3f43-5751-4af4-80f7-0072f65dab36,192.168.1.1,stephanie.harvey@example.com,harvey,stephanie
+
+14d97d19-7081-4cc5-bde1-9399641f0926,192.168.1.1,naomi.powell@example.com,powell,naomiUnable to upload the data for entity: `jemstep1__Investor_PE__e` org: `nextgenbank` and offsets: List(13978, 13988, 13993, 13998)
+Jemstep1__Jemstep_Id__c,Jemstep1__Portfolio_Value__c
+
+
+f379936d-2b7e-4224-9bfd-0d046483ff1c,16991.379900989534
+f379936d-2b7e-4224-9bfd-0d046483ff1c,828110.5859025916
+f379936d-2b7e-4224-9bfd-0d046483ff1c,944447.1621165558
+f379936d-2b7e-4224-9bfd-0d046483ff1c,930192.0779638506
+
+7d10ea70-3d58-4d28-8ad2-e3890200a03a,610900.0169672165
+7d10ea70-3d58-4d28-8ad2-e3890200a03a,247139.54104154202
+7d10ea70-3d58-4d28-8ad2-e3890200a03a,234893.20990547625
+7d10ea70-3d58-4d28-8ad2-e3890200a03a,188787.9473892128
+
+67ad3f43-5751-4af4-80f7-0072f65dab36,473340.8373848613
+67ad3f43-5751-4af4-80f7-0072f65dab36,62489.12262097528
+67ad3f43-5751-4af4-80f7-0072f65dab36,363430.0856558599
+67ad3f43-5751-4af4-80f7-0072f65dab36,612663.5477819896
+
+14d97d19-7081-4cc5-bde1-9399641f0926,645728.8394601041
+14d97d19-7081-4cc5-bde1-9399641f0926,222193.50588105136
+14d97d19-7081-4cc5-bde1-9399641f0926,424393.8325509451
+14d97d19-7081-4cc5-bde1-9399641f0926,329443.0890704504Unable to upload the data for entity: `jemstep1__Investor_PE__e` org: `nextgenbank` and offsets: List(13979, 13989, 13994, 13999)
+Jemstep1__Jemstep_Id__c,Jemstep1__Annual_Savings__c,Jemstep1__Current_Annualized_Return__c,Jemstep1__Current_Best_Year__c,Jemstep1__Current_Best_Year_Return__c,Jemstep1__Current_Cost_Of_Fees__c,Jemstep1__Current_Expense_Ratio__c,Jemstep1__Current_Worst_Year__c,Jemstep1__Current_Worst_Year_Return__c,Jemstep1__Current_Year_With_Loss__c,Jemstep1__Fee_Savings__c,Jemstep1__Target_Annualized_Return__c,Jemstep1__Target_Best_Year__c,Jemstep1__Target_Best_Year_Return__c,Jemstep1__Target_Cost_of_Fees__c,Jemstep1__Target_Expense_Ratio__c,Jemstep1__Target_Worst_Year__c,Jemstep1__Target_Worst_Year_Return__c,Jemstep1__Target_Years_With_Loss__c
+
+
+f379936d-2b7e-4224-9bfd-0d046483ff1c,0.0,1.1412748367188907,2017,6.619231504596932,2.1153064021835966,5.609694875604343,2016,2.573418941861778,616905735,0.0,15.125336340822164,2017,15.244906675304433,6.890633509689373,8.132380771551697,2016,6.7625829339097,-1510940504
+
+7d10ea70-3d58-4d28-8ad2-e3890200a03a,0.0,15.537098335862552,2017,4.890756277212473,16.936453097179392,8.521334362808693,2016,1.9896869123300687,-310640900,0.0,4.020869093926134,2017,1.3901817908158587,3.021385650441142,1.2263065527244232,2016,0.7616673421713083,990326694
+
+67ad3f43-5751-4af4-80f7-0072f65dab36,0.0,7.182899430037482,2017,9.889809822811188,7.943990918701189,11.1348750321015,2016,1.1480107304916687,1245077006,0.0,12.873884254221679,2017,13.460274557140892,17.411774236949526,2.7357887093432365,2016,5.292935567776016,84241084
+
+14d97d19-7081-4cc5-bde1-9399641f0926,0.0,13.744491113894616,2017,15.165720765449077,13.953700889445804,10.938305534004854,2016,11.866436934423433,12634626,0.0,9.673462476435937,2017,10.64268670552558,18.12280629321028,4.005584978262107,2016,8.524935393565851,349670376Unable to upload the data for entity: `jemstep1__Investor_PE__e` org: `nextgenbank` and offsets: List(13987, 13992, 13997)
+Jemstep1__Jemstep_Id__c,Jemstep1__Mapped_Target_Model__c
+
+
+7d10ea70-3d58-4d28-8ad2-e3890200a03a,ModerateAggressive
+
+67ad3f43-5751-4af4-80f7-0072f65dab36,ModerateAggressive
+
+14d97d19-7081-4cc5-bde1-9399641f0926,ModerateAggressiveUnable to upload the data for entity: `jemstep1__Account_PE__E` org: `nextgenbank` and offsets: List(13988, 13993, 13998)
+Jemstep1__Account_Name__c,Jemstep1__Account_Number__c,Jemstep1__Account_Status__c,Jemstep1__Account_Type__c,Jemstep1__Account_Value__c,Jemstep1__Contact__c,Jemstep1__Date_Updated__c,Jemstep1__Institution__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Jemstep_Id__c
+
+
+Test Account 81,XXXXX-1232-19,HeldAway,TaxableRetirement,610900.0169672165,7d10ea70-3d58-4d28-8ad2-e3890200a03a,2018-07-18T10:33:09.179Z,6fa20599-d635-421c-b8a0-e3c2522b14dc,7d10ea70-3d58-4d28-8ad2-e3890200a03a,1c457b33-5089-4ca3-b2f7-98bd611e9da6
+Test Account 25,XXXXX-1232-19,HeldAway,TaxableRetirement,247139.54104154202,7d10ea70-3d58-4d28-8ad2-e3890200a03a,2018-07-18T10:33:09.179Z,6fa20599-d635-421c-b8a0-e3c2522b14dc,7d10ea70-3d58-4d28-8ad2-e3890200a03a,8dc4dd8b-0e3c-46fe-ab2f-b29fb3256204
+Test Account 49,XXXXX-1232-41,HeldAway,TaxableRetirement,234893.20990547625,7d10ea70-3d58-4d28-8ad2-e3890200a03a,2018-07-18T10:33:09.179Z,384931c4-9ca7-4b1a-b31b-bdd125f4626a,7d10ea70-3d58-4d28-8ad2-e3890200a03a,69a32463-86b6-4c15-bdcf-48bf20c54dd1
+Test Account 43,XXXXX-1232-93,HeldAway,TaxableRetirement,188787.9473892128,7d10ea70-3d58-4d28-8ad2-e3890200a03a,2018-07-18T10:33:09.179Z,384931c4-9ca7-4b1a-b31b-bdd125f4626a,7d10ea70-3d58-4d28-8ad2-e3890200a03a,939d2ac3-edb8-42bc-aa58-67da102d2636
+
+Test Account 63,XXXXX-1232-20,HeldAway,TaxableRetirement,473340.8373848613,67ad3f43-5751-4af4-80f7-0072f65dab36,2018-07-18T10:33:09.185Z,3c299c20-9ce1-40e5-96d9-0e12d5dec3fa,67ad3f43-5751-4af4-80f7-0072f65dab36,4713ab76-357a-4f0a-9127-6a46796d0cdd
+Test Account 41,XXXXX-1232-53,HeldAway,TaxableRetirement,62489.12262097528,67ad3f43-5751-4af4-80f7-0072f65dab36,2018-07-18T10:33:09.185Z,3c299c20-9ce1-40e5-96d9-0e12d5dec3fa,67ad3f43-5751-4af4-80f7-0072f65dab36,fb05ffb4-2c5d-461a-83f0-6a76c650da0f
+Test Account 46,XXXXX-1232-23,HeldAway,TaxableRetirement,363430.0856558599,67ad3f43-5751-4af4-80f7-0072f65dab36,2018-07-18T10:33:09.185Z,e5be2c2b-b4b6-4b88-aa9d-d2f7903ad652,67ad3f43-5751-4af4-80f7-0072f65dab36,13f435f4-8c5d-40cd-8604-d3fe1739a31a
+Test Account 49,XXXXX-1232-88,HeldAway,TaxableRetirement,612663.5477819896,67ad3f43-5751-4af4-80f7-0072f65dab36,2018-07-18T10:33:09.185Z,e5be2c2b-b4b6-4b88-aa9d-d2f7903ad652,67ad3f43-5751-4af4-80f7-0072f65dab36,95e11774-d6d5-4286-982d-032134a3f1c4
+
+Test Account 58,XXXXX-1232-78,HeldAway,TaxableRetirement,645728.8394601041,14d97d19-7081-4cc5-bde1-9399641f0926,2018-07-18T10:33:09.190Z,ba0baa8d-194b-4413-b856-63bb08254561,14d97d19-7081-4cc5-bde1-9399641f0926,cc0f1b15-13e3-47f2-b10c-df2b07ee04f0
+Test Account 74,XXXXX-1232-95,HeldAway,TaxableRetirement,222193.50588105136,14d97d19-7081-4cc5-bde1-9399641f0926,2018-07-18T10:33:09.190Z,ba0baa8d-194b-4413-b856-63bb08254561,14d97d19-7081-4cc5-bde1-9399641f0926,1e3b5b35-6087-4b4d-9e5d-6ef54b7d100e
+Test Account 71,XXXXX-1232-83,HeldAway,TaxableRetirement,424393.8325509451,14d97d19-7081-4cc5-bde1-9399641f0926,2018-07-18T10:33:09.190Z,7fbcf332-b32d-40fa-9f94-b70ac86c72d8,14d97d19-7081-4cc5-bde1-9399641f0926,a3dbdbe3-d0d8-43d6-9cfd-8aa8137af8e1
+Test Account 54,XXXXX-1232-58,HeldAway,TaxableRetirement,329443.0890704504,14d97d19-7081-4cc5-bde1-9399641f0926,2018-07-18T10:33:09.190Z,7fbcf332-b32d-40fa-9f94-b70ac86c72d8,14d97d19-7081-4cc5-bde1-9399641f0926,b9bf3a19-5f89-4b3b-9916-6a2932b3f523Unable to upload the data for entity: `jemstep1__Holding_PE__e` org: `nextgenbank` and offsets: List(13988, 13993, 13998)
+Jemstep1__Account_Id__c,Jemstep1__Asset_Class__c,Jemstep1__Cost_Basis__c,Jemstep1__Date_Updated__c,Jemstep1__Description__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Jemstep_Id__c,Jemstep1__Price__c,Jemstep1__Quantity__c,Jemstep1__Symbol__c,Jemstep1__Value__c
+
+
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,1c457b33-5089-4ca3-b2f7-98bd611e9da6,f693d3c9-d737-4011-967f-3c5ce3b19966,187.76082902807354,52.0,SPY,610900.0169672165
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,1c457b33-5089-4ca3-b2f7-98bd611e9da6,0b40f2e3-3c01-40ac-af43-da57d2eb26e6,387.03354446886516,2.0,SPY,610900.0169672165
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,1c457b33-5089-4ca3-b2f7-98bd611e9da6,9529f375-8090-4128-942d-f7f09ef651cd,188.29540183768952,89.0,SPY,610900.0169672165
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,8dc4dd8b-0e3c-46fe-ab2f-b29fb3256204,afcad630-6e78-4d13-9e0e-71f57e09c478,204.6330083003732,43.0,SPY,247139.54104154202
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,8dc4dd8b-0e3c-46fe-ab2f-b29fb3256204,215a7bc9-056d-41fb-9b51-9fb8daff2eae,362.6329597920216,54.0,SPY,247139.54104154202
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,8dc4dd8b-0e3c-46fe-ab2f-b29fb3256204,60147651-e09a-4af0-89fa-bdc04d4011d8,66.90253816068763,31.0,SPY,247139.54104154202
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,69a32463-86b6-4c15-bdcf-48bf20c54dd1,3420838f-3af8-4a05-b34b-cc71e1c3d332,168.67869270994174,85.0,SPY,234893.20990547625
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,69a32463-86b6-4c15-bdcf-48bf20c54dd1,80142212-077a-4039-ae21-24cc1658057a,93.5025881827153,6.0,SPY,234893.20990547625
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,69a32463-86b6-4c15-bdcf-48bf20c54dd1,ec35fc52-abd9-4fb8-b953-6ef0beb97efb,155.55218356949285,77.0,SPY,234893.20990547625
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,939d2ac3-edb8-42bc-aa58-67da102d2636,3eb0c6dc-c66d-4fa2-9a74-0ff929fd07fb,337.29445807039434,97.0,SPY,188787.9473892128
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,939d2ac3-edb8-42bc-aa58-67da102d2636,4afc098b-e5ec-4a83-bd05-b66097b0d0c4,247.8640456251649,30.0,SPY,188787.9473892128
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.179Z,SPDR S&P 500 ETF Trust,939d2ac3-edb8-42bc-aa58-67da102d2636,5dc3c377-c6a9-4618-86c7-c461e683b292,12.581640584526621,12.0,SPY,188787.9473892128
+
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,4713ab76-357a-4f0a-9127-6a46796d0cdd,d045071b-6874-40eb-ba13-b8e35b24e7ba,372.50892748175715,53.0,SPY,473340.8373848613
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,4713ab76-357a-4f0a-9127-6a46796d0cdd,1fb1b57b-814b-429f-a36c-5a88a38709d0,218.2204480332547,93.0,SPY,473340.8373848613
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,4713ab76-357a-4f0a-9127-6a46796d0cdd,4de3b111-159f-4e74-a92a-01d60b18416d,160.7718438984022,1.0,SPY,473340.8373848613
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,fb05ffb4-2c5d-461a-83f0-6a76c650da0f,d7974123-65d8-42ff-ba14-afd93e476a21,310.3125466632086,44.0,SPY,62489.12262097528
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,fb05ffb4-2c5d-461a-83f0-6a76c650da0f,2c01e930-1228-432f-b4f1-570eab9b3f5c,288.18370277076116,90.0,SPY,62489.12262097528
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,fb05ffb4-2c5d-461a-83f0-6a76c650da0f,20adeaf7-5ed8-432e-85a8-7e096d55f138,132.71521036977933,95.0,SPY,62489.12262097528
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,13f435f4-8c5d-40cd-8604-d3fe1739a31a,f5edd7a8-098b-49a1-89d7-59942713418f,247.3501290966825,42.0,SPY,363430.0856558599
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,13f435f4-8c5d-40cd-8604-d3fe1739a31a,a88f5fc9-6d28-4ed1-9d9a-207d112fd03a,287.79148172924135,93.0,SPY,363430.0856558599
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,13f435f4-8c5d-40cd-8604-d3fe1739a31a,78998fc6-23d1-47fe-9134-6a07ba82321c,340.01853006805993,94.0,SPY,363430.0856558599
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,95e11774-d6d5-4286-982d-032134a3f1c4,4f62bc6e-691c-4f10-8824-e56868113609,194.1676071706578,98.0,SPY,612663.5477819896
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,95e11774-d6d5-4286-982d-032134a3f1c4,4681df6b-64da-48a5-946c-fe2202954fdd,13.79571028004678,13.0,SPY,612663.5477819896
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.185Z,SPDR S&P 500 ETF Trust,95e11774-d6d5-4286-982d-032134a3f1c4,445402cd-0c9e-4fcf-99ef-b408f70b4fbb,268.2669505980723,80.0,SPY,612663.5477819896
+
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,cc0f1b15-13e3-47f2-b10c-df2b07ee04f0,5de94bc3-56f8-4315-834a-ca29de84fd8a,44.80910684906405,69.0,SPY,645728.8394601041
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,cc0f1b15-13e3-47f2-b10c-df2b07ee04f0,18aa5d1f-1a03-40ff-b57e-52cdf405afd2,268.50141790344526,38.0,SPY,645728.8394601041
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,cc0f1b15-13e3-47f2-b10c-df2b07ee04f0,033fdea9-f65e-4b01-a37e-8d03178c6f9c,389.0992919296086,43.0,SPY,645728.8394601041
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,1e3b5b35-6087-4b4d-9e5d-6ef54b7d100e,fe61479f-8ac6-41ef-b4ab-8af032f9132c,89.00071590512826,81.0,SPY,222193.50588105136
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,1e3b5b35-6087-4b4d-9e5d-6ef54b7d100e,104bbb3b-55c0-48b8-b5e5-d951be2462f7,281.9145760804795,47.0,SPY,222193.50588105136
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,1e3b5b35-6087-4b4d-9e5d-6ef54b7d100e,71d4bf4a-861f-45a4-817e-2b780eb18fbb,200.20520685320932,41.0,SPY,222193.50588105136
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,a3dbdbe3-d0d8-43d6-9cfd-8aa8137af8e1,0f3d865a-638a-4214-b388-17b277090176,203.62127427603332,17.0,SPY,424393.8325509451
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,a3dbdbe3-d0d8-43d6-9cfd-8aa8137af8e1,7f4b0976-e05c-4599-9320-1000a40367d6,255.56881119937262,28.0,SPY,424393.8325509451
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,a3dbdbe3-d0d8-43d6-9cfd-8aa8137af8e1,614248cc-c419-470a-80f0-d0f348932020,22.261524605384643,64.0,SPY,424393.8325509451
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,b9bf3a19-5f89-4b3b-9916-6a2932b3f523,ece09d72-b7e9-48c0-baba-3826e28e7afe,339.1786477722698,81.0,SPY,329443.0890704504
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,b9bf3a19-5f89-4b3b-9916-6a2932b3f523,b32c5aa1-1573-4a07-866d-5a21f43e297a,100.53765966967237,88.0,SPY,329443.0890704504
+5,T3_STOCK_US_LARGE_CAP,100.0,2018-07-18T10:33:09.190Z,SPDR S&P 500 ETF Trust,b9bf3a19-5f89-4b3b-9916-6a2932b3f523,92515af4-4671-49f0-895c-354208a6ed8b,349.06889432668925,45.0,SPY,329443.0890704504Unable to upload the data for entity: `jemstep1__Questionnaire_PE__e` org: `nextgenbank` and offsets: List(13987, 13992, 13997)
+Jemstep1__Jemstep_Id__c,Jemstep1__Jemstep_Questionaire_Name__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Parent_Jemstep_Id__c
+
+
+5b4f1765e4b009df9a5b68dd,Retirement Fund,GOAL,7d10ea70-3d58-4d28-8ad2-e3890200a03a
+
+5b4f1765e4b009df9a5b68de,Retirement Fund,GOAL,67ad3f43-5751-4af4-80f7-0072f65dab36
+
+5b4f1765e4b009df9a5b68df,Retirement Fund,GOAL,14d97d19-7081-4cc5-bde1-9399641f0926Unable to upload the data for entity: `jemstep1__Questionnaire_PE__e` org: `nextgenbank` and offsets: List(13986, 13991, 13996)
+Jemstep1__Jemstep_Id__c,Jemstep1__Jemstep_Questionaire_Name__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Parent_Jemstep_Id__c
+
+
+7d10ea70-3d58-4d28-8ad2-e3890200a03a,Profile Questionnaire,PROFILE,7d10ea70-3d58-4d28-8ad2-e3890200a03a
+
+67ad3f43-5751-4af4-80f7-0072f65dab36,Profile Questionnaire,PROFILE,67ad3f43-5751-4af4-80f7-0072f65dab36
+
+14d97d19-7081-4cc5-bde1-9399641f0926,Profile Questionnaire,PROFILE,14d97d19-7081-4cc5-bde1-9399641f0926Unable to upload the data for entity: `jemstep1__Questionnaire_Detail_PE__e` org: `nextgenbank` and offsets: List(13987, 13992, 13997)
+Jemstep1__Answer__c,Jemstep1__Full_Question__c,Jemstep1__Jemstep_Id__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Question__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Last_Reviewed_Modified__c
+
+
+I understand that some level of risk is part of the investing process.,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_riskRelatedToInvestment,5b4f1765e4b009df9a5b68dd,,GOAL,
+10 to 15 years,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_timeFrameObjective,5b4f1765e4b009df9a5b68dd,,GOAL,
+Not for at least 10 years,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_timeFrameWithdrawal,5b4f1765e4b009df9a5b68dd,,GOAL,
+2% to 4% per year,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_withdrawalRequirement,5b4f1765e4b009df9a5b68dd,,GOAL,
+My only goal is to grow the value of the account over time and I am willing to accept reasonable fluctuations in my account value.,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_investmentAttitude,5b4f1765e4b009df9a5b68dd,,GOAL,
+Keep all of my investments considering my long-term investment goals and the principle of asset allocation.,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_marketDropReaction,5b4f1765e4b009df9a5b68dd,,GOAL,
+Somewhat stable,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_futureIncomeConfidence,5b4f1765e4b009df9a5b68dd,,GOAL,
+
+I understand that some level of risk is part of the investing process.,,67ad3f43-5751-4af4-80f7-0072f65dab36_riskRelatedToInvestment,5b4f1765e4b009df9a5b68de,,GOAL,
+10 to 15 years,,67ad3f43-5751-4af4-80f7-0072f65dab36_timeFrameObjective,5b4f1765e4b009df9a5b68de,,GOAL,
+Not for at least 10 years,,67ad3f43-5751-4af4-80f7-0072f65dab36_timeFrameWithdrawal,5b4f1765e4b009df9a5b68de,,GOAL,
+2% to 4% per year,,67ad3f43-5751-4af4-80f7-0072f65dab36_withdrawalRequirement,5b4f1765e4b009df9a5b68de,,GOAL,
+My only goal is to grow the value of the account over time and I am willing to accept reasonable fluctuations in my account value.,,67ad3f43-5751-4af4-80f7-0072f65dab36_investmentAttitude,5b4f1765e4b009df9a5b68de,,GOAL,
+Keep all of my investments considering my long-term investment goals and the principle of asset allocation.,,67ad3f43-5751-4af4-80f7-0072f65dab36_marketDropReaction,5b4f1765e4b009df9a5b68de,,GOAL,
+Somewhat stable,,67ad3f43-5751-4af4-80f7-0072f65dab36_futureIncomeConfidence,5b4f1765e4b009df9a5b68de,,GOAL,
+
+I understand that some level of risk is part of the investing process.,,14d97d19-7081-4cc5-bde1-9399641f0926_riskRelatedToInvestment,5b4f1765e4b009df9a5b68df,,GOAL,
+10 to 15 years,,14d97d19-7081-4cc5-bde1-9399641f0926_timeFrameObjective,5b4f1765e4b009df9a5b68df,,GOAL,
+Not for at least 10 years,,14d97d19-7081-4cc5-bde1-9399641f0926_timeFrameWithdrawal,5b4f1765e4b009df9a5b68df,,GOAL,
+2% to 4% per year,,14d97d19-7081-4cc5-bde1-9399641f0926_withdrawalRequirement,5b4f1765e4b009df9a5b68df,,GOAL,
+My only goal is to grow the value of the account over time and I am willing to accept reasonable fluctuations in my account value.,,14d97d19-7081-4cc5-bde1-9399641f0926_investmentAttitude,5b4f1765e4b009df9a5b68df,,GOAL,
+Keep all of my investments considering my long-term investment goals and the principle of asset allocation.,,14d97d19-7081-4cc5-bde1-9399641f0926_marketDropReaction,5b4f1765e4b009df9a5b68df,,GOAL,
+Somewhat stable,,14d97d19-7081-4cc5-bde1-9399641f0926_futureIncomeConfidence,5b4f1765e4b009df9a5b68df,,GOAL,Unable to upload the data for entity: `jemstep1__Questionnaire_Detail_PE__e` org: `nextgenbank` and offsets: List(13987, 13992, 13997)
+Jemstep1__Answer__c,Jemstep1__Full_Question__c,Jemstep1__Jemstep_Id__c,Jemstep1__Parent_Jemstep_Id__c,Jemstep1__Question__c,Jemstep1__Questionnaire_Type__c,Jemstep1__Last_Reviewed_Modified__c
+
+
+I understand that some level of risk is part of the investing process.,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_riskRelatedToInvestment,5b4f1765e4b009df9a5b68dd,,GOAL,
+10 to 15 years,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_timeFrameObjective,5b4f1765e4b009df9a5b68dd,,GOAL,
+Not for at least 10 years,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_timeFrameWithdrawal,5b4f1765e4b009df9a5b68dd,,GOAL,
+2% to 4% per year,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_withdrawalRequirement,5b4f1765e4b009df9a5b68dd,,GOAL,
+My only goal is to grow the value of the account over time and I am willing to accept reasonable fluctuations in my account value.,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_investmentAttitude,5b4f1765e4b009df9a5b68dd,,GOAL,
+Keep all of my investments considering my long-term investment goals and the principle of asset allocation.,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_marketDropReaction,5b4f1765e4b009df9a5b68dd,,GOAL,
+Somewhat stable,,7d10ea70-3d58-4d28-8ad2-e3890200a03a_futureIncomeConfidence,5b4f1765e4b009df9a5b68dd,,GOAL,
+
+I understand that some level of risk is part of the investing process.,,67ad3f43-5751-4af4-80f7-0072f65dab36_riskRelatedToInvestment,5b4f1765e4b009df9a5b68de,,GOAL,
+10 to 15 years,,67ad3f43-5751-4af4-80f7-0072f65dab36_timeFrameObjective,5b4f1765e4b009df9a5b68de,,GOAL,
+Not for at least 10 years,,67ad3f43-5751-4af4-80f7-0072f65dab36_timeFrameWithdrawal,5b4f1765e4b009df9a5b68de,,GOAL,
+2% to 4% per year,,67ad3f43-5751-4af4-80f7-0072f65dab36_withdrawalRequirement,5b4f1765e4b009df9a5b68de,,GOAL,
+My only goal is to grow the value of the account over time and I am willing to accept reasonable fluctuations in my account value.,,67ad3f43-5751-4af4-80f7-0072f65dab36_investmentAttitude,5b4f1765e4b009df9a5b68de,,GOAL,
+Keep all of my investments considering my long-term investment goals and the principle of asset allocation.,,67ad3f43-5751-4af4-80f7-0072f65dab36_marketDropReaction,5b4f1765e4b009df9a5b68de,,GOAL,
+Somewhat stable,,67ad3f43-5751-4af4-80f7-0072f65dab36_futureIncomeConfidence,5b4f1765e4b009df9a5b68de,,GOAL,
+
+I understand that some level of risk is part of the investing process.,,14d97d19-7081-4cc5-bde1-9399641f0926_riskRelatedToInvestment,5b4f1765e4b009df9a5b68df,,GOAL,
+10 to 15 years,,14d97d19-7081-4cc5-bde1-9399641f0926_timeFrameObjective,5b4f1765e4b009df9a5b68df,,GOAL,
+Not for at least 10 years,,14d97d19-7081-4cc5-bde1-9399641f0926_timeFrameWithdrawal,5b4f1765e4b009df9a5b68df,,GOAL,
+2% to 4% per year,,14d97d19-7081-4cc5-bde1-9399641f0926_withdrawalRequirement,5b4f1765e4b009df9a5b68df,,GOAL,
+My only goal is to grow the value of the account over time and I am willing to accept reasonable fluctuations in my account value.,,14d97d19-7081-4cc5-bde1-9399641f0926_investmentAttitude,5b4f1765e4b009df9a5b68df,,GOAL,
+Keep all of my investments considering my long-term investment goals and the principle of asset allocation.,,14d97d19-7081-4cc5-bde1-9399641f0926_marketDropReaction,5b4f1765e4b009df9a5b68df,,GOAL,
+Somewhat stable,,14d97d19-7081-4cc5-bde1-9399641f0926_futureIncomeConfidence,5b4f1765e4b009df9a5b68df,,GOAL,
