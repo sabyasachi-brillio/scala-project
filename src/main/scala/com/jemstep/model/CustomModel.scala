@@ -18,7 +18,7 @@ object CustomModel {
   case class EntityHolder(offSet: Long, holder: EntityModel) extends ActorMessage
 
   case class CsvData(entity: String, org: String,
-                     csvObject: String, offsets: List[Long]) {
+                     csvObject: String, offsets: List[Long], noOfRows: Int) {
     override def toString: String =
       s"Unable to upload the data for entity: `$entity` " +
         s"org: `$org` and offsets: $offsets\n" + csvObject
@@ -41,7 +41,7 @@ object CustomModel {
 
   case class ConnectionDetails(accessToken: String, instanceUrl: String)
 
-  case class EntityInfo(entity: ENTITY_TYPE, offSet: Long, csvData: String)
+  case class EntityInfo(entity: ENTITY_TYPE, offSet: Long, csvData: String, noOfRecords: Int)
 
   case class CacheHolder(rtqPeU: List[EntityInfo], rtqPeP: List[EntityInfo],
                          rtqPeG: List[EntityInfo], rtqPeB: List[EntityInfo],
@@ -68,16 +68,16 @@ object CustomModel {
 
     def getCsvData(org: String): CsvDataList = {
       CsvDataList(
-        CsvData(RTQ_PE_U.toString, org, getCsvRows(RTQ_PE_U, rtqPeU), getOffset(rtqPeU)),
-        CsvData(RTQ_PE_P.toString, org, getCsvRows(RTQ_PE_P, rtqPeP), getOffset(rtqPeP)),
-        CsvData(RTQ_PE_B.toString, org, getCsvRows(RTQ_PE_B, rtqPeB), getOffset(rtqPeB)),
-        CsvData(RTQ_PE_G.toString, org, getCsvRows(RTQ_PE_G, rtqPeG), getOffset(rtqPeG)),
-        CsvData(ACCOUNT_PE.toString, org, getCsvRows(ACCOUNT_PE, accPe), getOffset(accPe)),
-        CsvData(HOLDING_PE.toString, org, getCsvRows(HOLDING_PE, hdPe), getOffset(hdPe)),
-        CsvData(QUESTIONNAIRE_PE_G.toString, org, getCsvRows(QUESTIONNAIRE_PE_G, quPeG), getOffset(quPeG)),
-        CsvData(QUESTIONNAIRE_PE_MQ.toString, org, getCsvRows(QUESTIONNAIRE_PE_MQ, quPeMQ), getOffset(quPeMQ)),
-        CsvData(QUESTIONNAIRE_DETAIL_PEG.toString, org, getCsvRows(QUESTIONNAIRE_DETAIL_PEG, quDePeG), getOffset(quDePeG)),
-        CsvData(QUESTIONNAIRE_DETAIL_PEMQ.toString, org, getCsvRows(QUESTIONNAIRE_DETAIL_PEMQ, quDePeMQ), getOffset(quDePeMQ)))
+        CsvData(RTQ_PE_U.toString, org, getCsvRows(RTQ_PE_U, rtqPeU), getOffset(rtqPeU), getCsvNoOfRows(rtqPeU)),
+        CsvData(RTQ_PE_P.toString, org, getCsvRows(RTQ_PE_P, rtqPeP), getOffset(rtqPeP), getCsvNoOfRows(rtqPeP)),
+        CsvData(RTQ_PE_B.toString, org, getCsvRows(RTQ_PE_B, rtqPeB), getOffset(rtqPeB), getCsvNoOfRows(rtqPeB)),
+        CsvData(RTQ_PE_G.toString, org, getCsvRows(RTQ_PE_G, rtqPeG), getOffset(rtqPeG), getCsvNoOfRows(rtqPeG)),
+        CsvData(ACCOUNT_PE.toString, org, getCsvRows(ACCOUNT_PE, accPe), getOffset(accPe), getCsvNoOfRows(accPe)),
+        CsvData(HOLDING_PE.toString, org, getCsvRows(HOLDING_PE, hdPe), getOffset(hdPe), getCsvNoOfRows(hdPe)),
+        CsvData(QUESTIONNAIRE_PE_G.toString, org, getCsvRows(QUESTIONNAIRE_PE_G, quPeG), getOffset(quPeG), getCsvNoOfRows(quPeG)),
+        CsvData(QUESTIONNAIRE_PE_MQ.toString, org, getCsvRows(QUESTIONNAIRE_PE_MQ, quPeMQ), getOffset(quPeMQ), getCsvNoOfRows(quPeMQ)),
+        CsvData(QUESTIONNAIRE_DETAIL_PEG.toString, org, getCsvRows(QUESTIONNAIRE_DETAIL_PEG, quDePeG), getOffset(quDePeG), getCsvNoOfRows(quDePeG)),
+        CsvData(QUESTIONNAIRE_DETAIL_PEMQ.toString, org, getCsvRows(QUESTIONNAIRE_DETAIL_PEMQ, quDePeMQ), getOffset(quDePeMQ), getCsvNoOfRows(quDePeMQ)))
     }
 
     /**
@@ -91,7 +91,14 @@ object CustomModel {
       le.map(_.csvData.getBytes().length).sum >= cs
 
     private def getCsvRows(en: ENTITY_TYPE, le: List[EntityInfo]): String =
-      le.map(_.csvData).foldLeft(entityCsvHeader(en))(_ + "\n" + _)
+      le.map(_.csvData).foldLeft(entityCsvHeader(en))(_ + _)
+
+    @SuppressWarnings(Array("org.wartremover.warts.Var"))
+    private def getCsvNoOfRows(le: List[EntityInfo]): Int = {
+      var count : Int = 0
+      le.foreach(x => count += x.noOfRecords)
+      count
+    }
 
     private def getOffset(le: List[EntityInfo]): List[Long] = le.map(_.offSet).distinct
 

@@ -29,12 +29,13 @@ trait RestClient extends RestConfig {
     // create http client
     val httpclient = HttpClients.createDefault()
     // login params
+    val refresh_token = getToken(org)
     val loginParams: util.List[BasicNameValuePair] =
       List(
         new BasicNameValuePair("grant_type", GRANT_TYPE),
         new BasicNameValuePair("client_id", CLIENT_ID),
         new BasicNameValuePair("client_secret", CLIENT_SECRET),
-        new BasicNameValuePair("refresh_token", getToken(org))
+        new BasicNameValuePair("refresh_token", refresh_token)
       ).asJava
 
     // http post body
@@ -51,12 +52,10 @@ trait RestClient extends RestConfig {
 
     val accessToken = loginResult.get("access_token").asText()
     val instanceUrl = loginResult.get("instance_url").asText()
-
-    BulkStreamLogging.logInformation(s"Request login for `$org` organization got http login response code ${loginResponse.getStatusLine.getStatusCode}")
+    BulkStreamLogging.logInformation(s"Request login for `$org` organization got http login response code ${loginResponse.getStatusLine.getStatusCode}. Instance URL: $instanceUrl")
 
     ConnectionDetails(accessToken, instanceUrl)
   }
-
   /**
     * create the job
     *

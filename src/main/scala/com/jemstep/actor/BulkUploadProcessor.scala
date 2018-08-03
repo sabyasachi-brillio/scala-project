@@ -2,6 +2,7 @@ package com.jemstep.actor
 
 import com.jemstep.logging.BulkStreamLogging
 import com.jemstep.logging.failed.FailureLogging
+import com.jemstep.logging.debugger.DebuggerLogging
 import com.jemstep.logging.unprocessed.UnprocessedLogging
 import com.jemstep.model.CustomModel
 import com.jemstep.model.CustomModel.CsvData
@@ -13,6 +14,7 @@ trait BulkUploadProcessor extends RestClient with RestStatus {
   import BulkStreamLogging._
   import FailureLogging._
   import UnprocessedLogging._
+  import DebuggerLogging._
 
   def uploadProcessor(csvData: CsvData): Boolean = {
     val conDetails: Option[CustomModel.ConnectionDetails] =
@@ -28,6 +30,7 @@ trait BulkUploadProcessor extends RestClient with RestStatus {
         job match {
           case Some(jobId) if jobId != null =>
             val statusCode: Int = uploadCSVData(csvData.csvObject, jobId, connectionDetails)
+            dlogDebugging(s"org: `${csvData.org}`, entity: `${csvData.entity}`, noOfRecords: `${csvData.noOfRows}`, actulData: `${csvData.csvObject}` \n\n")
             val closeStatus: String = closeOrAbortJob(jobId, connectionDetails)
 
             logInformation(s"Job id: `$jobId` created for org: `${csvData.org}` and " +

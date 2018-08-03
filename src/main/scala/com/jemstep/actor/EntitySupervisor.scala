@@ -7,7 +7,7 @@ import akka.actor._
 import com.jemstep.model.CustomModel.{EntityHolder, CacheRefresh}
 import com.jemstep.model.ExtractorModel.IncomingData
 import com.jemstep.model._
-//import com.jemstep.logging.uploadfailed.UnableToUpload._
+import com.jemstep.logging.invalidschema.InvalidSchemaLogging._
 
 import scala.concurrent.duration.FiniteDuration
 
@@ -29,8 +29,8 @@ class EntitySupervisor extends Actor {
 
   @SuppressWarnings(Array("org.wartremover.warts.Any"))
   def active(): Receive = {
-    case incomingData: IncomingData if isValidSchema(incomingData)=>
-      newSupervision(incomingData, sender())
+    case incomingData: IncomingData => if(isValidSchema(incomingData)) newSupervision(incomingData, sender())
+    else islogDebugging(incomingData.recordSchemaFullName)
   }
 
   private def isValidSchema(incomingData: IncomingData): Boolean =

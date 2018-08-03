@@ -5,6 +5,11 @@ import com.jemstep.logging.BulkStreamLogging.logInformation
 import com.jemstep.model.BusinessEntityModel.EntityType
 import com.jemstep.model.CustomModel.{CacheHolder, _}
 
+/**
+  * caching the messages until reach the configured message size, if massage size limit is not reach with in specified time limit refreshing the cache data
+  *
+  * @param bulkApiActor
+  */
 class NewCacheActor(bulkApiActor: ActorRef) extends Actor {
 
   import EntityType._
@@ -28,9 +33,9 @@ class NewCacheActor(bulkApiActor: ActorRef) extends Actor {
         cache.get(eh.holder.organization)
           .map(existingData =>
             insertIntoCacheHolder(existingData, eh.holder.entityType,
-              EntityInfo(eh.holder.entityType, eh.offSet, eh.holder.toString)))
+              EntityInfo(eh.holder.entityType, eh.offSet, eh.holder.toString, eh.holder.jsonObj.size)))
           .getOrElse(insertIntoCacheHolder(getEmptyCacheHolder, eh.holder.entityType,
-            EntityInfo(eh.holder.entityType, eh.offSet, eh.holder.toString)))
+            EntityInfo(eh.holder.entityType, eh.offSet, eh.holder.toString, eh.holder.jsonObj.size)))
       
       logInformation(s"Cache ready for upload Status: ${newCacheHolder.readyForUpload} and " +
         s"rtqPeU ${newCacheHolder.rtqPeU.nonEmpty} " +

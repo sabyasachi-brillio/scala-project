@@ -20,7 +20,7 @@ object QuestionnaireModel {
         questions.map(x =>
           QuestionnaireDetailPeMQ(Answer__c = x.answer, Full_Question__c = "",
             Jemstep_Id__c = userId+"_"+x.questionId, Jemstep_Questionaire_Detail_Id__c = userId,
-            Question__c = "", Questionnaire_Type__c = "PROFILE",
+            Question__c = x.questionId, Questionnaire_Type__c = "PROFILE",
             Last_Reviewed_Modified__c = ""))
 
       val listOfEntityModel2: EntityModel = EntityModel(QUESTIONNAIRE_DETAIL_PEMQ, org, listOfQuestionnaireDetails)

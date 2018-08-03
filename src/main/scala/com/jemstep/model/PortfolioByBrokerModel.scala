@@ -19,7 +19,7 @@ object PortfolioByBrokerModel {
 
   case class Positions(assetClass: String, costBasis: String,
                        description: String, unitPrice: String,
-                       units: String, ticker: String, uuid: String)
+                       units: String, ticker: String, uuid: String, dollarValue: String)
 
   case class Accounts(accountType: String, accountNumber: String,
                       accountName: String, accountStatus: String,
@@ -71,7 +71,7 @@ object PortfolioByBrokerModel {
               Cost_Basis__c = p.costBasis, Date_Updated__c = y.update,
               Description__c = p.description, Parent_Jemstep_Id__c = y.uuid,
               Jemstep_Id__c = p.uuid, Price__c = p.unitPrice,
-              Quantity__c = p.units, Symbol__c = p.ticker, Value__c = y.dollarValue))
+              Quantity__c = p.units, Symbol__c = p.ticker, Value__c = p.dollarValue))
         }).flatMap(x => x.map(y => y))
       )
 

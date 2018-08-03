@@ -1,16 +1,19 @@
-salesforce Sync Service
+# Salesforce Sync Service
 
-## Running the example:
+## Running the example
 
+Assuming you have already cloned this repo and changed into the cloned directory:
+
+```
 1. docker run -d -p 2181:2181 -p 9092:9092 --rm --env ADVERTISED_HOST=kafka --env ADVERTISED_PORT=9092 --name kafka -h kafka johnnypark/kafka-zookeeper
-2. cd salesforce-sync-service
-3. docker build -t "salesforce-sync-service:latest" ./docker/.
-4. docker run -p 8080:8080 --rm -it --name=salesforce-sync-service --link kafka --volume=${HOME}/code/salesforce-sync-service/:/code/salesforce-sync-service salesforce-sync-service
-5. cd /code/salesforce-sync-service
-6. sbt test
-7. sbt "runMain com.jemstep.producer.PlainSinkProducerMain"
-8. sbt "runMain com.jemstep.Main"
-9. sbt "runMain com.jemstep.oauth.OAuthSSLHandler"
+2. docker build -t "salesforce-sync-service:latest" ./docker/.
+3. docker run -p 8080:8080 --rm -it --name=salesforce-sync-service --link kafka --volume=$(pwd)/salesforce-sync-service/:/code/salesforce-sync-service salesforce-sync-service
+4. cd /code/salesforce-sync-service
+5. sbt test
+6. sbt "runMain com.jemstep.producer.PlainSinkProducerMain"
+7. sbt "runMain com.jemstep.Main"
+8. sbt "runMain com.jemstep.oauth.OAuthSSLHandler"
+```
 
 ## Connecting to another Kafka host
 
