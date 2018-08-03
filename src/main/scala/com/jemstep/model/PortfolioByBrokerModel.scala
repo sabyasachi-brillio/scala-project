@@ -29,7 +29,7 @@ object PortfolioByBrokerModel {
 
   case class Broker(accounts: List[Accounts], uuid: String)
 
-  case class PortfolioByBroker(brokers: List[Broker]) extends BusinessModel {
+  case class PortfolioByBroker(brokers: List[Broker], dollarValue: String) extends BusinessModel {
 
     import EntityType._
 
@@ -78,12 +78,9 @@ object PortfolioByBrokerModel {
 
       val listOfEntityModel2: EntityModel = EntityModel(HOLDING_PE, org, listOfHoldingPe)
 
-      val listOfRtqPortfolio: List[RtqPe] = brokers.flatMap(x =>
-        x.accounts.map(y => {
-          RtqPeP(Jemstep_Id__c = userId,
-            Portfolio_Value__c = y.dollarValue)
-        })
-      )
+      val listOfRtqPortfolio: List[RtqPe] =
+          List(RtqPeP(Jemstep_Id__c = userId,
+          Portfolio_Value__c = dollarValue))
 
       val listOfEntityModel3: EntityModel = EntityModel(RTQ_PE_P, org, listOfRtqPortfolio)
 
